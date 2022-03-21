@@ -1,8 +1,7 @@
 # Kata de cuenta bancaria (Object Calisthenics)
-=================
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/59320487/158994563-8e3cc93d-1ce5-480b-a460-60b2fcb51543.png"
+  <img src="https://www.sofka.com.co/wp-content/uploads/2021/02/sofkau-logo-horizontal.png"
 </p>
 
 <p align="center">
