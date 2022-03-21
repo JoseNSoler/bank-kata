@@ -1,5 +1,14 @@
-Kata de cuenta bancaria (Object Calisthenics)
+# Kata de cuenta bancaria (Object Calisthenics)
 =================
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/59320487/158994563-8e3cc93d-1ce5-480b-a460-60b2fcb51543.png"
+</p>
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/59320487/159374738-39611231-a3f0-465b-9b40-85936ef1645e.png"
+</p>
+
 
 Piense en la experiencia de su cuenta bancaria personal. En caso de duda, opte por la solución más sencilla
 
@@ -15,22 +24,26 @@ Requisitos
 ```java
 public class Account {
 
-    void deposit(int amount) {
+    void deposit(Money amount, PersonalDate date) {
 
     }
 
-    void withdraw(int amount){
+    void withdraw(Money amount, PersonalDate date){
 
     }
 
-    void printStatements() {
+    void printStatements(Money amount, PersonalDate date) {
 
     }
 
 }
 ```
+El objeto Money contiene dos variables conteniendo el valor en *int*, y un atributo de valor *Currency*, el cual contendra la divisa de dicha cuenta, 
+permitiendo asi poder hacer transacciones solo con Money del mismo tipo de *Currency*
 
-## De la siguiente forma se debería ejecutar:
+PersonalDate es solo un encapsulamiento de el formato Date, pero limitandose a crear y mostrar fechas validas en formato "10/01/2021"
+
+## De la siguiente forma se ejecuta:
 
 ```java
 public class StartApp {
