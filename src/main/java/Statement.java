@@ -8,7 +8,7 @@ public class Statement {
     }
 
     // Saber valor final en dado caso de una transaccion
-    public Money AfterBalanceTransaction(Money operation){
+    public Money AfterBalanceTransaction(Money operation) {
         return balance.adition(operation);
     }
 
@@ -18,12 +18,12 @@ public class Statement {
         Money zero = Money.of(0, null);
 
         return (balance.isGreaterThan(zero)) ?
-                        debitString(currentBalance) :
-                        creditString(currentBalance);
+                debitString(currentBalance) :
+                creditString(currentBalance);
     }
 
     // string Balance actual
-    public String personalDate(){
+    public String personalDate() {
         return personalDate.toString() + "\t|";
     }
 
@@ -33,15 +33,15 @@ public class Statement {
     }
 
     //string personalizado para logica debito
-    public String debitString(Money currentBalance){
-        return  personalDate() +
+    public String debitString(Money currentBalance) {
+        return personalDate() +
                 balance() + "\t\t|\t\t\t\t|" +
                 currentBalance.toString();
     }
 
     //string personalizado para logica credito
-    public String creditString(Money currentBalance){
-        return  personalDate() + "\t\t\t\t|" +
+    public String creditString(Money currentBalance) {
+        return personalDate() + "\t\t\t\t|" +
                 balance() + "\t\t|" +
                 currentBalance.toString();
     }

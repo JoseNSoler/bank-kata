@@ -6,7 +6,6 @@ public class Money {
     private final Locale locale;
 
 
-
     public Money(int amount, Locale locale){
         this.amount = amount;
         this.locale = locale;
@@ -16,10 +15,8 @@ public class Money {
         return new Money(amount, locale);
     }
 
-
     public Money adition(Money otherMoney){
         String newCountry = otherMoney.countryName();
-
         System.out.println(newCountry.equals(this.countryName()));
 
         if(newCountry.equals(this.countryName()))
@@ -34,7 +31,6 @@ public class Money {
     public String countryName(){
         return this.locale.getDisplayCountry();
     }
-
 
     public boolean isGreaterThan(Money otherMoney) {
         return this.amount > otherMoney.amount;
@@ -54,13 +50,4 @@ public class Money {
         return numberFormat.format(amount);
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        Money other = (Money) obj;
-        if (amount != other.amount)
-            return false;
-        if (locale != other.locale)
-            return false;
-        return true;
-    }
 }

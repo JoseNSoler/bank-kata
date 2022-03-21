@@ -15,29 +15,30 @@ public class Account {
         Money zero = Money.of(0, null);
         boolean condition = amount.isGreaterThan(zero);
 
-        if(condition){
+        if (condition) {
             newMovement(amount, date);
         }
-        if(!condition){
+        if (!condition) {
             throw new IllegalArgumentException();
         }
     }
 
-    public void withdraw(Money amount, PersonalDate date){
+    public void withdraw(Money amount, PersonalDate date) {
         boolean condition = amount.isGreaterThan(balance);
-        if(!condition){
+        if (!condition) {
             newMovement(amount.negative(), date);
         }
-        if(condition){
-            throw  new IllegalArgumentException();
+        if (condition) {
+            throw new IllegalArgumentException();
         }
     }
 
     void printStatements(PrintStream printer) {
-        printer.println(History.toStringer());
+        String finalString = History.toStringer();
+        printer.println(finalString);
     }
 
-    private void newMovement(Money money, PersonalDate date){
+    private void newMovement(Money money, PersonalDate date) {
         Statement statement = new Statement(date, money);
         Money balanceAfterMovement = statement.AfterBalanceTransaction(balance);
         balance = balanceAfterMovement;
